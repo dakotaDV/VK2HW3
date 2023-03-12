@@ -25,4 +25,6 @@ public abstract class Transport {
     public void updateTyre() {
         System.out.println("Меняем покрышку");
     }
+
+
 }

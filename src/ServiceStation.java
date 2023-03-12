@@ -1,26 +1,25 @@
 public class ServiceStation {
     public void check(Car car) {
-        checkTransport(car);
-        car.updateTyre();
-       checkEngine(car);
+        Mechanic mechanic = new Mechanic();
+        mechanic.checkWhelable(car);
+        mechanic.checkEngine(car);
+
+
     }
     public void check(Bicycle bicycle) {
-       checkTransport(bicycle);
-       bicycle.updateTyre();
+       Mechanic mechanic = new Mechanic();
+       mechanic.checkWhelable(bicycle);
     }
 
     public void check(Truck truck) {
-      checkTransport(truck);
-      checkEngine(truck);
-      truck.checkTrailer();
+        Mechanic mechanic = new Mechanic();
+        mechanic.checkWhelable(truck);
+        mechanic.checkEngine(truck);
+        mechanic.checkTrailerable(truck);
+
     }
 
-    private void checkTransport(Transport transport){
-        System.out.println("Обслуживаем " + transport.getModelName());
-        for (int i = 0; i < transport.getWheelsCount(); i++) {
-            transport.updateTyre();
-        }
-    }
+
     private void checkEngine(Enginable enginable){
         enginable.checkEngine();
     }

@@ -1,4 +1,4 @@
-public class Truck extends Transport implements Enginable {
+public class Truck extends Transport implements Enginable, Trailerable {
     public Truck(String modelName, int wheelsCount) {
         super(modelName, wheelsCount);
     }
@@ -8,14 +8,12 @@ public class Truck extends Transport implements Enginable {
         System.out.println("Меняем покрышку у грузовика");
     }
 
-
-    public void checkTrailer() {
-        System.out.println("Проверяем прицеп у грузовика");
-    }
-
-
     @Override
     public void checkEngine() {
-
+        System.out.println("Проверяем двигатель у грузовика");
+    }
+    @Override
+    public void checkTrailerable() {
+        System.out.println("Проверяем прицеп у грузовика");
     }
 }
